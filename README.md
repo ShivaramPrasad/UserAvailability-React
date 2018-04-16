@@ -50,8 +50,11 @@ Model is designed taking the Logs as input and and performing number of function
 ## FUNCTIONAL MODULES:
 
 Low level Functional modules and their functional description
-FUNCTIONAL MODULE	DESCRIPTION
-Using moment(): converted  Milliseconds_to_date and day format for the calculation purposes. 	To convert time-stamp provided from milliseconds format to date. This uses “ explain the calculation done on a high level”
+### FUNCTIONAL MODULE	:
+Using moment(): converted  Milliseconds_to_date and day format for the calculation purposes. 	
+
+### DESCRIPTION :
+To convert time-stamp provided from milliseconds format to date. This uses “ explain the calculation done on a high level”
 
 
 

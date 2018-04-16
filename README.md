@@ -1,5 +1,6 @@
 # UserAvailability-React
-Created with CodeSandbox
+I have finished this project with ReactJS using the online ide CodeSandbox... 
+
 
 
 Screenshot of this project:

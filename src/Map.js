@@ -7,7 +7,7 @@ import users from "./users.css";
 class Map extends React.Component{
 
 render(){
-
+  
   let Availablity = this.props.Availablity;
   let styles = this.props.style;
 

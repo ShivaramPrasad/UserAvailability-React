@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from 'prop-types';
 import moment from "moment";
 import Map from "./Map";
 import users from "./users.css";
@@ -51,6 +50,7 @@ const black = {
 };
 
 class Modal extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -61,33 +61,24 @@ class Modal extends React.Component {
   }
 
   render() {
-    // const value = Object.keys(this.props.Value).map( V => {
-    //   console.log(V.name);
-    //   return <div>{V}</div>
-    // });
-    // const value = Object.entries(this.props.Key).map( value => {
-    //   return (
-    //     <div>{value.toString()}</div>
-    //   );
-    // })
-    const {now} = this.state;
+  
+    const {now, hours} = this.state;
     let Key = this.props.Key;
     let name = this.props.Value.name;
-
     var timeStamp = this.props.Value.lastUpdated;
+
+    //got the lastUpdated timestamp to get the day...
     var lastupdated_day = moment(timeStamp).get('day');
-    
-  
-   
-    
+
+    //got the today's day 
     var current_day = moment(now).format('dddd');
-    //format("dddd, MMMM Do YYYY, h:mm:ss a");
+    //(hint:)format("dddd, MMMM Do YYYY, h:mm:ss a");
   
+    //to get the corresponding day number
     const get_day = dayNum(current_day);
     
+    //Calculation for shifting the entry array to show today's availablibity 
     const calc = Calculation(lastupdated_day, get_day);
-    // console.log(calc);
-
 
     let avail = [];
     avail.push(this.props.Value.availabilityArray);
@@ -96,10 +87,11 @@ class Modal extends React.Component {
     //function call once we got the current day we can pass tat through this func call
     const Availablity = Avail(avail, calc);
      
+    //Mapping the Hours in availability array to their corresponding colors 
     const k_color = Availablity;
-    const arr = k_color.map((v,k) => {
+    const map_color = k_color.map((v,k) => {
      return( v !== null 
-      ? <Map style={this.state.hours[v]} 
+      ? <Map style={hours[v]} 
       Availablity = {Availablity}
       />
       : null);
@@ -107,40 +99,22 @@ class Modal extends React.Component {
       });
     
    
-    
-    const arr_Key = Object.keys(avail).map((value, key) => {
+    //for finding the average weekday availability 
+    const average = Object.keys(avail).map((value, key) => {
       return <Average avail= {avail[key]} 
       lastupdated_day={lastupdated_day}
-      hours ={this.state.hours}
+      hours ={hours}
       />;
     });
-    
-    const sort = Object.keys(arr_Key).map(([key, value]) => {
-      
-      return arr_Key[key];
-    });
-
-
    
-    
-   
- 
-    //  console.log(moment(at).diff(moment(current)));
-    
-    //dateA => returns the xact day and time using calendar
-    // var dateA = moment(this.props.Value.lastUpdated).subtract('days').calendar();
-
-    // console.log(dateA);
-    // var diff = moment().subtract(current, timeStamp);
     
     return (
-      <div>
+    
+      <div className="user_border">
         <div className="user_name">{name}</div>
-        <div>{arr}</div>
-        
+        <div>{map_color}</div>  
         <br />
-        
-        <div>{arr_Key}</div>
+        <div>{average}</div>
       </div>
     );
   }
@@ -148,7 +122,7 @@ class Modal extends React.Component {
 
 export default Modal;
 
-
+//to get the availability array values
 function Avail(avail, K){
  const gets = avail[0];
  const loop = gets.map((L, k) =>{
@@ -160,6 +134,7 @@ function Avail(avail, K){
   return loop;
 }
 
+//to get the corresponding day value
 function dayNum(current_day){
   switch(current_day){
     case "Sunday":
@@ -179,6 +154,8 @@ function dayNum(current_day){
   }
 }
 
+
+//for shifting the entry...
 function Calculation(lastupdated_day, get_day){
   if(lastupdated_day >= get_day){
     if(lastupdated_day === get_day){

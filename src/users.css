@@ -4,18 +4,19 @@
   font-family: Cambria;
 }
 
-.user_name{
+.user_name {
   margin-left: 120px;
   margin-bottom: -40px;
-  font-size: 25px; 
+  font-size: 25px;
   font-family: Cambria;
 }
 
-.circle_txt, .avg_txt{
+.circle_txt,
+.avg_txt {
   padding: 12px;
 }
 
-.avg_value{
+.avg_value {
   font-size: 25px;
   text-align: center;
   font-family: Cambria;
@@ -24,11 +25,26 @@
   margin-bottom: 70px;
 }
 
-.header{
+.header {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
+  padding-left: -400px;
+  padding-top: 30px;
+  border: 2px solid green;
 }
 
-.body{
-  margin: 70px;
+.body {
+  margin-left: -10px;
+  padding-left: 500px;
+  padding-top: 50px;
+  
 }
+
+/* .user_border{
+  border: 2px solid red;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 900px;
+  padding-bottom: 0px; 
+  margin: 0px;
+} */

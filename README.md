@@ -57,7 +57,7 @@ Using moment(): converted  Milliseconds_to_date and day format for the calculati
 
 ## OUTPUT:
 
-The output comprises of User Name, Todays availability, Avg Availability. // The users are arranged using alphabetical order // some conditions if applied....
+The output comprises of User Name, Today's availability, Avg Availability.
 
 The below screen-shot is the actual output obtained.
 

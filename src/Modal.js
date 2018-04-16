@@ -111,6 +111,8 @@ class Modal extends React.Component {
     return (
     
       <div className="user_border">
+        <h4 className="today_txt">Today</h4>
+        <h4 className="average">Average</h4>
         <div className="user_name">{name}</div>
         <div>{map_color}</div>  
         <br />

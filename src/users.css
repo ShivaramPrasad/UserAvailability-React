@@ -1,0 +1,34 @@
+.today {
+  font-size: 25px;
+  text-align: center;
+  font-family: Cambria;
+}
+
+.user_name{
+  margin-left: 120px;
+  margin-bottom: -40px;
+  font-size: 25px; 
+  font-family: Cambria;
+}
+
+.circle_txt, .avg_txt{
+  padding: 12px;
+}
+
+.avg_value{
+  font-size: 25px;
+  text-align: center;
+  font-family: Cambria;
+  margin-top: -82px;
+  margin-left: 250px;
+  margin-bottom: 70px;
+}
+
+.header{
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.body{
+  margin: 70px;
+}

@@ -15,6 +15,9 @@ class Average extends React.Component{
 
     //function for calculating the average availability of the user's ...
     const addition = array.map((v,k) => {
+      /* return average(v); */
+
+      //'0's for sat & sunday's ...
       if(lastupdated_day ===4){
       let add = v[k] + v[k + 1]+ 0 + 0 + v[k + 4]+ v[k + 5]+ v[k + 6];
       return parseInt(add / 5);
@@ -57,3 +60,21 @@ class Average extends React.Component{
 }
 
 export default Average;
+
+
+//cutomizing the average logics... 
+// function average(value){
+//   let val = value;
+//   let sum = 0;
+//   let week_days = 7;
+//   let key_value = week_days - value;
+//   for(let i =0; i<=7; i++){
+//     var first = (key_value - i)^2;
+//     if ( first !== 0 ||  first  !== 1 ){
+//       sum = sum + val[i];
+//       return sum;
+//     }
+    
+//   }
+  
+// }
